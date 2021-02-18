@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    </head>
+    <body>
+        <div class="nav">
+            <div id="logo">
+                <img id="mug" src="assets/cup-of-coffee.png"></img>
+                <span id="title">M U G</span>
+            </div>
+            <form id="search_form" action="/" method="GET">
+                <div>
+                    <input name="search" type="text" class="searchbox" placeholder="Search...">
+                    <button class="searchbtn">
+                        <svg width="15px" height="15px" viewBox="0 0 30.239 30.239" fill="grey">
+                            <path d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735 c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0 c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0 C21.517,9.026,21.517,14.63,18.073,18.074z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div onclick="menuToggle()" id="menu_area">
+                <span class="menuBtn"></span>
+                <span class="menuBtn"></span>
+                <span class="menuBtn"></span>
+            </div>
+        </div>
+        <div id='menu'>
+            <ul id='menu_ul'>
+                <li class="menu_item"><a href="/">HOME</a></li>
+                <li class="menu_item"><a href="contact.html" class="active">CONTATO</a></li>
+            </ul>
+        </div>
+
+        <form id="contact_form" name="contactForm">
+            <div id="contact_input">
+                <input onkeyup="verify(this)" placeholder="Your email" type="email" name="from">
+                <p>or</p>
+                <input onkeyup="verify(this)" placeholder="Your phone" type="tel" name="phone">
+            </div>
+            <input onkeyup="verify(this)" class="contact_text" placeholder="Subject" type="text" name="subject">
+            <textarea id="message" onkeyup="verify(this)" class="contact_text" placeholder="Message" type="text" name="text"></textarea>
+        </form>
+
+        <footer>
+            <div>
+                <p class="info">ENDEREÇO</p>
+                <p class="info">Rua: aaa</p>
+                <br>
+                <p class="info">Developed by</p>
+                <p class="info"><u>4aaaak</u></p>
+            </div>
+            <div>
+                <p class="info">Teasdadsadadast</p>
+                <p class="info">Tessdadasd adadasdasdat</p>
+            </div>
+            <div>
+                <p class="info">PHONE</p>
+                <p class="info">(99) aaaaa-aaaa</p>
+                <br><p class="info">EMAIL</p>
+                <p class="info">aaan@aaa.com</p>
+            </div>
+        </footer>
+
+        <script>
+            setTimeout(() => {document.getElementById('menu').style.visibility = "visible"}, 200)
+            function menuToggle(){
+                var list = document.getElementsByClassName('menuBtn')
+                
+                for (let pos = 0; pos < list.length; pos++) list[pos].classList.toggle("closemenu");
+                document.getElementById("menu").classList.toggle("active")
+            }
+            
+            var input_rules = {
+                from: 15,
+                phone: 9,
+                subject: false,
+                contact: false
+            }
+
+            function verify(element){
+                let elN = element.name // Element name
+                let elLength = element.value.length // Element value length
+
+                input_rules['contact'] = (elN == "from" || "phone") && elLength >= input_rules[elN] ? true : false
+                input_rules['subject'] = (elN == 'subject') && elLength >= 10 ? true : false
+
+                if(input_rules['contact'] && input_rules['subject']) document.getElementById("message").style.visibility = 'initial'
+            }
+        </script>
+    </body>
+</html>

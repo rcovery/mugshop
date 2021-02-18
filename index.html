@@ -1,0 +1,161 @@
+<html> 
+    <head>
+        <title>Demo</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    </head>
+    <body>
+        <div class="nav">
+            <div id="logo">
+                <img id="mug" src="assets/cup-of-coffee.png"></img>
+                <span id="title">M U G</span>
+            </div>
+            <form id="search_form" action="/" method="GET">
+                <div>
+                    <input name="search" type="text" class="searchbox" placeholder="Search...">
+                    <button class="searchbtn">
+                        <svg width="15px" height="15px" viewBox="0 0 30.239 30.239" fill="grey">
+                            <path d="M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735 c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0 c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0 C21.517,9.026,21.517,14.63,18.073,18.074z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <div onclick="menuToggle()" id="menu_area">
+                <span class="menuBtn"></span>
+                <span class="menuBtn"></span>
+                <span class="menuBtn"></span>
+            </div>
+        </div>
+        <div id='menu'>
+            <ul id='menu_ul'>
+                <li class="menu_item"><a href="/" class="active">HOME</a></li>
+                <li class="menu_item"><a href="contact.html">CONTATO</a></li>
+            </ul>
+        </div>
+        <p class="category">Category 1</p>
+        <div class="splide" id="slide_one">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <span class="border"></span><span class="border"></span><span class="border"></span><span class="border"></span>
+                        <img class="product_pic" src="assets/cup-of-coffee.png">
+                        <p class="product_name">Nome do produto</p>
+                        <price>R$ 40.00</price>
+                        <div class="buy_area">
+                            <button class="buy_btn">COMPRAR</button>
+                            <button class="cart">
+                                <svg width="27" viewBox="0 0 456.029 456.029" fill="black"> <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"/><path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4 C457.728,97.71,450.56,86.958,439.296,84.91z"/> <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"/> </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <span class="border"></span><span class="border"></span><span class="border"></span><span class="border"></span>
+                        <img class="product_pic" src="https://images.tcdn.com.br/img/img_prod/615061/caneca_inox_caveira_cranio_osso_chopp_rock_2843_1_20190625162732.jpg">
+                        <p class="product_name">Nome do produto 2</p>
+                        <price>R$ 120.00</price>
+                        <div class="buy_area">
+                            <button class="buy_btn">COMPRAR</button>
+                            <button class="cart">
+                                <svg width="27" viewBox="0 0 456.029 456.029" fill="black"> <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"/><path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4 C457.728,97.71,450.56,86.958,439.296,84.91z"/> <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"/> </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <span class="border"></span><span class="border"></span><span class="border"></span><span class="border"></span>
+                        <img class="product_pic" src="https://images.tcdn.com.br/img/img_prod/584235/caneca_caveira_cranio_de_guerreiro_drinks_e_cerveja_438979965_1_20170928120209.jpg">
+                        <p class="product_name">Product</p>
+                        <price>R$ 25.00</price>
+                        <div class="buy_area">
+                            <button class="buy_btn">COMPRAR</button>
+                            <button class="cart">
+                                <svg width="27" viewBox="0 0 456.029 456.029" fill="black"> <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"/><path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4 C457.728,97.71,450.56,86.958,439.296,84.91z"/> <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"/> </svg>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <br>
+            </div>
+        </div>
+        <p class="category">Category 2</p>
+        <div class="splide" id="slide_two">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <span class="border"></span><span class="border"></span><span class="border"></span><span class="border"></span>
+                        <img class="product_pic" src="https://images.tcdn.com.br/img/img_prod/615061/caneca_inox_caveira_cranio_osso_chopp_rock_2843_1_20190625162732.jpg">
+                        <p class="product_name">Nome do produto 2</p>
+                        <price>R$ 120.00</price>
+                        <div class="buy_area">
+                            <button class="buy_btn">COMPRAR</button>
+                            <button class="cart">
+                                <svg width="27" viewBox="0 0 456.029 456.029" fill="black"> <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"/><path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4 C457.728,97.71,450.56,86.958,439.296,84.91z"/> <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"/> </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <span class="border"></span><span class="border"></span><span class="border"></span><span class="border"></span>
+                        <img class="product_pic" src="https://www.geralgeek.com.br/images/venda/Caneca-Cranio-Caveira-Skull-Sabia-Cega-Decorativo-Resina-5e0eab507a48a.webp">
+                        <p class="product_name">Nome do produto 2</p>
+                        <price>R$ 120.00</price>
+                        <div class="buy_area">
+                            <button class="buy_btn">COMPRAR</button>
+                            <button class="cart">
+                                <svg width="27" viewBox="0 0 456.029 456.029" fill="black"> <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248 c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z"/><path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48 C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064 c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4 C457.728,97.71,450.56,86.958,439.296,84.91z"/> <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296 c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z"/> </svg>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <form>
+
+        </form>
+        
+        <footer>
+            <div>
+                <p class="info">ENDEREÇO</p>
+                <p class="info">Rua: aaaa</p>
+                <br>
+                <p class="info">Developed by</p>
+                <p class="info"><u>aaa</u></p>
+            </div>
+            <div>
+                <p class="info">Test</p>
+                <p class="info">Test</p>
+            </div>
+            <div>
+                <p class="info">PHONE</p>
+                <p class="info">(99) LOREM-IPSUM</p>
+                <br><p class="info">EMAIL</p>
+                <p class="info">aa@aaa.com</p>
+            </div>
+        </footer>
+
+        <script>
+            new Splide( '#slide_one', {
+                perPage: 4,
+                gap: 30,
+                autoWidth: true,
+                type: 'loop'
+            }).mount();
+            new Splide( '#slide_two', {
+                perPage: 4,
+                gap: 30,
+                type: "loop",
+                autoWidth: true
+            }).mount();
+            setTimeout(() => {document.getElementById('menu').style.visibility = "visible"}, 200)
+            function menuToggle(){
+                var list = document.getElementsByClassName('menuBtn')
+                
+                for (let pos = 0; pos < list.length; pos++) list[pos].classList.toggle("closemenu");
+                document.getElementById("menu").classList.toggle("active")
+            }
+        </script>
+    </body>
+</html>
