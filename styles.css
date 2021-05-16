@@ -119,11 +119,30 @@ footer{
 #menu{
     z-index: 2;
     position: absolute;
-    right: -15rem;
-    visibility: hidden;
+    right: 0px;
+    transform: translateX(100%);
+    display: none;
     animation: menu_close forwards ease 0.2s;
 }#menu.active{
+    display: initial;
     animation: menu_appear forwards ease 0.2s;
+}
+
+@keyframes menu_appear{
+    0% {
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes menu_close{
+    0%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 #menu_ul{
@@ -291,22 +310,6 @@ button{
 }#message:focus{
     outline: none;
     box-shadow: 5px 5px 3px black;
-}
-@keyframes menu_appear{
-    0%{
-        right: -15rem;
-    }
-    100%{
-        right: 0;
-    }
-}
-@keyframes menu_close{
-    0%{
-        right: 0rem;
-    }
-    100%{
-        right: -15rem;
-    }
 }
 
 @media only screen and (max-width: 500px){
